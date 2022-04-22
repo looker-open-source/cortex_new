@@ -20,6 +20,6 @@ constant: FUNCTION_DATASET {
 }
 
 constant: CLIENT {
-  value: "type Client Id Here"
+  value: "client_id"
   export: override_required
 }
