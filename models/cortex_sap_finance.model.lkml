@@ -28,12 +28,10 @@ persist_with: cortex_default_datagroup
 include: "/LookML_Dashboard/*.dashboard.lookml"
 
 explore: data_intelligence_ar {
-    sql_always_where: ${Client_ID} = "@{CLIENT}" ;;
+  sql_always_where: ${Client_ID} = '{{ _user_attributes['client_id'] }}' ;;
 }
 
 explore:  data_intelligence_otc{
-  sql_always_where: ${Client_ID} = "@{CLIENT}" ;;
+  sql_always_where: ${Client_ID} = '{{ _user_attributes['client_id'] }}' and ${Language} = '{{ _user_attributes['language'] }}';;
 }
-
-
 

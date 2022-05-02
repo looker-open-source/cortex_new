@@ -43,6 +43,7 @@
       Product: data_intelligence_otc.product
       Currency: data_intelligence_otc.Currency_Required
       Year: data_intelligence_otc.creation_date_date
+      Order Status: data_intelligence_otc.sales_order_status
     row: 4
     col: 0
     width: 6
@@ -104,6 +105,7 @@
       Product: data_intelligence_otc.product
       Currency: data_intelligence_otc.Currency_Required
       Year: data_intelligence_otc.creation_date_date
+      Order Status: data_intelligence_otc.sales_order_status
     row: 9
     col: 0
     width: 6
@@ -115,9 +117,10 @@
     type: looker_grid
     fields: [data_intelligence_otc.sales_order, data_intelligence_otc.sales_order_line_item,
       data_intelligence_otc.product, data_intelligence_otc.Sold_To_Party, data_intelligence_otc.Ship_To_Party,
-      data_intelligence_otc.Bill_To_Party, data_intelligence_otc.req_delivery_date,
-      data_intelligence_otc.actual_delivery_date, data_intelligence_otc.sales_order_status,
-      data_intelligence_otc.sales_order_qty, data_intelligence_otc.Base_UoM, data_intelligence_otc.Exchange_Rate_Sales_Value,
+      data_intelligence_otc.Bill_To_Party, data_intelligence_otc.creation_date_date,
+      data_intelligence_otc.req_delivery_date, data_intelligence_otc.actual_delivery_date,
+      data_intelligence_otc.sales_order_status, data_intelligence_otc.sales_order_qty,
+      data_intelligence_otc.Base_UoM, data_intelligence_otc.Exchange_Rate_Sales_Value,
       data_intelligence_otc.sales_order_value_Local_Currecny, data_intelligence_otc.Local_Currency_Key,
       data_intelligence_otc.Sales_Order_Value_Global_Currency, data_intelligence_otc.Global_Currency]
     sorts: [data_intelligence_otc.Exchange_Rate_Sales_Value desc]
@@ -144,6 +147,8 @@
     series_labels:
       data_intelligence_otc.sales_order_value_Local_Currecny: Sales Order Value Local
         Currency
+      data_intelligence_otc.creation_date_date: Sales Order Creation Date
+      data_intelligence_otc.sales_order_status: Order Status
     series_column_widths:
       data_intelligence_otc.sales_order: 120
       data_intelligence_otc.sales_order_line_items: 120
@@ -163,6 +168,7 @@
       data_intelligence_otc.sales_order_status: 120
       data_intelligence_otc.req_delivery_date: 120
       data_intelligence_otc.actual_delivery_date: 120
+      data_intelligence_otc.creation_date_date: 120
     series_text_format:
       data_intelligence_otc.sales_order:
         align: left
@@ -199,6 +205,8 @@
         align: left
       data_intelligence_otc.actual_delivery_date:
         align: left
+      data_intelligence_otc.creation_date_date:
+        align: left
     series_types: {}
     defaults_version: 1
     listen:
@@ -209,6 +217,7 @@
       Product: data_intelligence_otc.product
       Currency: data_intelligence_otc.Currency_Required
       Year: data_intelligence_otc.creation_date_date
+      Order Status: data_intelligence_otc.sales_order_status
     row: 14
     col: 0
     width: 24
@@ -249,6 +258,7 @@
       Product: data_intelligence_otc.product
       Currency: data_intelligence_otc.Currency_Required
       Year: data_intelligence_otc.creation_date_date
+      Order Status: data_intelligence_otc.sales_order_status
     row: 4
     col: 6
     width: 18
@@ -278,6 +288,7 @@
       Product: data_intelligence_otc.product
       Currency: data_intelligence_otc.Currency_Required
       Year: data_intelligence_otc.creation_date_date
+      Order Status: data_intelligence_otc.sales_order_status
     row: 0
     col: 0
     width: 24
@@ -381,3 +392,17 @@
     explore: data_intelligence_otc
     listens_to_filters: []
     field: data_intelligence_otc.Currency_Required
+  - name: Order Status
+    title: Order Status
+    type: field_filter
+    default_value: ''
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: checkboxes
+      display: popover
+      options: []
+    model: cortex_sap_finance
+    explore: data_intelligence_otc
+    listens_to_filters: []
+    field: data_intelligence_otc.sales_order_status

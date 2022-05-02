@@ -110,9 +110,9 @@
     model: cortex_sap_finance
     explore: data_intelligence_otc
     type: looker_column
-    fields: [data_intelligence_otc.avg_order_line_items, data_intelligence_otc.product,
-      data_intelligence_otc.average_deliveries_sales_orders]
-    sorts: [data_intelligence_otc.avg_order_line_items desc]
+    fields: [data_intelligence_otc.product, data_intelligence_otc.count_sales_orders_line_item,
+      data_intelligence_otc.count_deliveries_sales_orders]
+    sorts: [data_intelligence_otc.count_sales_orders_line_item desc]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -155,9 +155,12 @@
     series_types: {}
     series_colors:
       data_intelligence_otc.avg_order_line_items: "#ACE9F5"
+      data_intelligence_otc.count_sales_orders_line_item: "#ACE9F5"
     series_labels:
       data_intelligence_otc.average_deliveries_sales_orders: Average Delivery Items
       data_intelligence_otc.avg_order_line_items: Average Order Line Items
+      data_intelligence_otc.count_sales_orders_line_item: Total Sales Order Line Imte
+      data_intelligence_otc.count_deliveries_sales_orders: Total Delivery Line Item
     show_null_points: true
     interpolation: linear
     defaults_version: 1

@@ -58,7 +58,7 @@ view: data_intelligence_otc {
 
   dimension: billing_block{
     type: string
-    sql: ${TABLE}.BillingBlockInSdDocument_FAKSK ;;
+    sql: ${TABLE}.BillingBlockReasonDescription ;;
   }
 
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
@@ -263,7 +263,7 @@ view: data_intelligence_otc {
 
   dimension: delivery_block{
     type: string
-    sql: ${TABLE}.DeliveryBlock_documentHeader_LIFSK ;;
+    sql: ${TABLE}.DeliveryBlockReasonDescription ;;
   }
 
   dimension: Ship_To_Party {
@@ -1054,6 +1054,11 @@ view: data_intelligence_otc {
     type: string
     sql: ${TABLE}.Client_MANDT ;;
   }
+
+  dimension: Language{
+    type: string
+    sql: ${TABLE}.Language ;;
+  }
   measure: count {
     type: count
     drill_fields: []
@@ -1076,6 +1081,36 @@ view: data_intelligence_otc {
         </nav>
       </div>
     <div style="background-color: #FFFFFF; height:500px;width:100%"></div>;;
+  }
+
+  measure: Sales_performance{
+    type: string
+    sql: "Home" ;;
+    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_finance::sales_performance?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&Region={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+  }
+
+  measure: Order_details{
+    type: string
+    sql: "Home" ;;
+    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_finance::order_details?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&Region={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+  }
+
+  measure: Order_fulfillment{
+    type: string
+    sql: "Home" ;;
+    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_finance::order_fulfillment?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&Region={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+  }
+
+  measure: Order_status_snapshot{
+    type: string
+    sql: "Home" ;;
+    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_finance::order_status_snapshot?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&Region={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+  }
+
+  measure: billing_and_pricing{
+    type: string
+    sql: "Home" ;;
+    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_finance::billing_and_pricing?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&Region={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
   }
 
 }

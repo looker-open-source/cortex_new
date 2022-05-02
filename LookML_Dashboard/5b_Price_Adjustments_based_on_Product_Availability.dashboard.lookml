@@ -87,11 +87,34 @@
     col: 0
     width: 24
     height: 12
-  - name: ''
-    type: text
-    title_text: ''
-    subtitle_text: ' <a href="/dashboards/cortex_sap_finance::billing_and_pricing?">Home</a>'
-    body_text: ''
+  - title: Untitled
+    name: Untitled
+    model: cortex_sap_finance
+    explore: data_intelligence_otc
+    type: single_value
+    fields: [data_intelligence_otc.billing_and_pricing]
+    sorts: [data_intelligence_otc.billing_and_pricing]
+    limit: 500
+    custom_color_enabled: true
+    show_single_value_title: false
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    series_types: {}
+    defaults_version: 1
+    listen:
+      Currency Required: data_intelligence_otc.Currency_Required
+      Sales Org: data_intelligence_otc.sales_org
+      Region: data_intelligence_otc.country
+      Year: data_intelligence_otc.creation_date_date
+      Distribution Channel: data_intelligence_otc.distribution_channel
+      Division: data_intelligence_otc.division
+      Product: data_intelligence_otc.product
+      Sales Order Net Value: data_intelligence_otc.sales_order_net_value_Global_Currency
     row: 12
     col: 0
     width: 24

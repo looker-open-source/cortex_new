@@ -632,7 +632,7 @@
       options: []
     model: cortex_sap_finance
     explore: data_intelligence_otc
-    listens_to_filters: []
+    listens_to_filters: [Sales Org]
     field: data_intelligence_otc.country
   - name: Sales Org
     title: Sales Org
@@ -660,7 +660,7 @@
       options: []
     model: cortex_sap_finance
     explore: data_intelligence_otc
-    listens_to_filters: [Region, Sales Org]
+    listens_to_filters: [Region]
     field: data_intelligence_otc.distribution_channel
   - name: Division
     title: Division
