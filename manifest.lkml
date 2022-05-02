@@ -18,8 +18,3 @@ constant: FUNCTION_DATASET {
   value: "FUNCTION_DATASET"
   export: override_required
 }
-
-constant: CLIENT {
-  value: "client_id"
-  export: override_required
-}
