@@ -34,7 +34,9 @@ The datasets required by this block can be obtained by following the installatio
 
 - **Dataset/Schema for Functions**: "FUNCTIONS_DATASET", Set to the name of the dataset which contains the SAP/Cortex Functions using `project_id.name_of_dataset`. For example, _`mygcpprojectname`.SAP_FUNCTIONS_
 
-- **ClientId/Constant**: In the manifest.lkml file,For OTC Dashboards please update the value of clientID
+- **ClientId**: Create a User attribute called "client_id" to controls which SAP Client(s) (MANDT) data each user is able to access
+
+- **Language**: Create a User attribute called "language" to controls which Language(SPRAS) data each user is able to access
 
 **(Optional)** Unhide additional dimensions and measure: Most dimensions and measures have been hidden to simplify reporting and data understanding. However should you find anything valuable missing, simply update the hidden parameters to No in the relevant views.
 
