@@ -126,7 +126,7 @@
     col: 0
     width: 24
     height: 2
-    - title: Price Adjustments based on Customer Profiling
+  - title: Price Adjustments based on Customer Profiling
     name: Price Adjustments based on Customer Profiling
     model: cortex_sap_finance
     explore: data_intelligence_otc
