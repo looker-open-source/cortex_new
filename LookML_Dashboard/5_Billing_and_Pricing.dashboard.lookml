@@ -126,18 +126,18 @@
     col: 0
     width: 24
     height: 2
-  - title: Price Adjustments based on Customer Profiling
+    - title: Price Adjustments based on Customer Profiling
     name: Price Adjustments based on Customer Profiling
     model: cortex_sap_finance
     explore: data_intelligence_otc
     type: looker_column
-    fields: [data_intelligence_otc.customer_name1, data_intelligence_otc.average_list_price1,
-      data_intelligence_otc.average_adjusted_price, average_of_variation_of_listprice_and_adjustedprice]
+    fields: [data_intelligence_otc.customer_name1, data_intelligence_otc.average_variation_of_listprice_and_adjustedprice]
     filters:
       data_intelligence_otc.customer_name1: "-NULL"
       data_intelligence_otc.Currency_Required: USD
       average_of_variation_of_listprice_and_adjustedprice: NOT NULL
-    sorts: [average_of_variation_of_listprice_and_adjustedprice desc]
+    sorts: [data_intelligence_otc.average_variation_of_listprice_and_adjustedprice
+        desc]
     limit: 500
     dynamic_fields: [{measure: min_of_adjusted_price_global_currency, based_on: data_intelligence_otc.adjusted_price_Global_currency,
         expression: '', label: Min of Adjusted Price Global Currency, type: min, _kind_hint: measure,
@@ -194,6 +194,9 @@
       data_intelligence_otc.average_adjusted_price: "#A5EF55"
     series_labels:
       data_intelligence_otc.average_list_price1: Average List Price
+      average_of_variation_of_listprice_and_adjustedprice: Variation o
+      data_intelligence_otc.average_variation_of_listprice_and_adjustedprice: Variation
+        of List Price and AdjustedPrice
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: false
@@ -204,7 +207,7 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    hidden_fields: [data_intelligence_otc.average_list_price1, data_intelligence_otc.average_adjusted_price]
+    hidden_fields: []
     listen:
       Region: data_intelligence_otc.country
       Sales Org: data_intelligence_otc.sales_org
